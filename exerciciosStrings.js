@@ -28,8 +28,8 @@ console.log(`Maisuculo: ${fraseDa2.toUpperCase()}, Minusculo: ${fraseDa2.toLocal
 // - O tamanho antes e depois da remoção dos espaços
 let fraseDa3 = (`  Socorram-me! Subi no onibus em Marrocos!      `)
 console.log(fraseDa3, fraseDa3.length)
-let noSpace = fraseDa3.trim()
-console.log(noSpace, noSpace.length)
+fraseDa3 = fraseDa3.trim()
+console.log(fraseDa3, fraseDa3.length)
 
 
 
