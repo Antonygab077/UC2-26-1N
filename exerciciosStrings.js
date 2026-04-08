@@ -62,7 +62,7 @@ console.log(resultDa5)
 let num1 = 20
 let num2 = 25
 let resultDa6 = num1 + num2
-console.log(`A gente pegou ` + num1 + ` e somou com ` + num2 + ` que deu ` + resultDa6)
+console.log(`A gente pegou ${num1} e somou com ${num2} que deu ${resultDa6}`)
 
 // 7)
 // Peça para o usuário digitar qualquer valor.
