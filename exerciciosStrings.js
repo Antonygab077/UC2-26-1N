@@ -69,7 +69,7 @@ console.log(`A gente pegou ${num1} e somou com ${num2} que deu ${resultDa6}`)
 // Exiba:
 // - O valor digitado
 // - O tipo desse valor usando typeof
-let val = 0
+let val = aks.question(`Digite um valor: `)
 console.log(`Valor digitado: ${val}, Tipo do valor: ${typeof val}`)
 
 // 8)
