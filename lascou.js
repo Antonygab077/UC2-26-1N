@@ -142,9 +142,12 @@ console.log(slaNoSpace.length)
 // - o resultado da verificação (true ou false)
 // - a frase modificada
 // =========================================
-
-
-
+/*
+let phrase = ask.question(`Escreva uma frase sobre JavaScript: `)
+let verification = phrase.includes(`JavaScript`)
+let replace = phrase.replaceAll(`JavaScript`, `JS`)
+console.log(`Frase: ${phrase}, Verificaçao: ${verification}, Substituiçao: ${replace}`)
+*/
 
 
 // =========================================
@@ -156,9 +159,10 @@ console.log(slaNoSpace.length)
 // - o primeiro elemento
 // - o último elemento
 // =========================================
-
-
-
+/*
+let array = [`Azul`, `Vermelho`, `Amarelo`, `Roxo`, `Verde`]
+console.log(`Tamanho: ${array.length}, Primeiro: ${array[0]}, Ultimo: ${array[4]}`)
+*/
 
 
 // =========================================
@@ -174,8 +178,14 @@ console.log(slaNoSpace.length)
 // - o array final
 // - o tamanho do array antes e depois das alterações
 // =========================================
-
-
+/*
+let array2 = [10, 20, 30, 40, 50]
+console.log(array2.length)
+array2.push(60, 70)
+array2.splice(0, 1)
+array2.splice(2, 1)
+console.log(array2, array2.length)
+*/
 
 
 
@@ -188,9 +198,15 @@ console.log(slaNoSpace.length)
 // Mostre:
 // - se o nome informado existe no array
 // =========================================
-
-
-
+/*
+let arrayNames = [`Antony`, `Erick`, `Emanuel`]
+let arrayVerification = ask.question(`Dgite um nome: `)
+if (arrayNames.includes(arrayVerification)){
+    console.log(`O nome existe no array`)
+}else{
+    console.log(`O nome NAO existe no array`)
+}
+*/
 
 
 // =========================================
@@ -207,8 +223,12 @@ console.log(slaNoSpace.length)
 // - o nome formatado
 // - o tamanho dos dois
 // =========================================
-
-
+/*
+let userName = ask.question(`Escreva um nome: `)
+let noSpace = userName.trim()
+let lowerCase = userName.toLowerCase()
+console.log(`Original: ${userName}, Sem espaço: ${noSpace}, Tudo minusculo: ${lowerCase}`)
+*/
 
 
 
@@ -226,10 +246,13 @@ console.log(slaNoSpace.length)
 // - a frase modificada
 // - o tamanho das duas frases
 // =========================================
-
-
-
-
+/*
+let phrase2 = ask.question(`Escreva uma frase: `)
+let alterada = phrase2.toLowerCase()
+alterada.trim()
+alterada.replaceAll("a", "i")
+console.log(phrase2, alterada)
+*/
 
 // =========================================
 // EXERCÍCIO 13
@@ -240,10 +263,12 @@ console.log(slaNoSpace.length)
 //
 // Mostre o resultado
 // =========================================
-
-
-
-
+/*
+let array3 = [1, 2, 3, 4, 5, 6, 7, 8 , 9, 10]
+array3.splice(6, 1, `Uva`)
+array3.splice(2, 2, `Laranja`)
+console.log(array3)
+*/
 
 // =========================================
 // EXERCÍCIO 14
@@ -253,10 +278,12 @@ console.log(slaNoSpace.length)
 //
 // Depois atribua um valor e mostre o tipo novamente.
 // =========================================
-
-
-
-
+/*
+let noValor
+console.log(typeof noValor)
+noValor = `Emanuel quer banana`
+console.log(typeof noValor)
+*/
 
 // =========================================
 // EXERCÍCIO 15
@@ -266,3 +293,6 @@ console.log(slaNoSpace.length)
 //
 // Crie uma frase que combine tudo usando texto e variáveis.
 // =========================================
+let name1 = ask.question(`Qual seu nome? `)
+let age1 = ask.question(`Qual sua idade? `)
+console.log(`Seu nome eh ${name1} e voce tem ${age1} anos`)
