@@ -69,8 +69,12 @@ console.log(array3.includes(question2))
 // =========================================
 /*
 let array4 = []
-let question3 = ask.question(`Digite o nome de 3 jogos: `)
-array4.push(question3)
+let questionGame = ask.question(`Digite o nome de 1 jogo: `)
+array4.push(questionGame)
+questionGame = ask.question(`Digite de mais 1 jogo: `)
+array4.push(questionGame)
+questionGame = ask.question(`Digite de mais 1 jogo: `)
+array4.push(questionGame)
 console.log(array4)
 */
 
