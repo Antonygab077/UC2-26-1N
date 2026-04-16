@@ -172,4 +172,27 @@ console.log(array12.reverse())
 //   * Calcular média de notas dos filmes
 // =========================================
 
-//VOLTAR NA 7
+let filmList = [
+   {titulo: `CARROS`, genero: `ANIMACAO`, nota: `10`}, 
+   {titulo: `GIGANTES DE AÇO`, genero: `ACAO`, nota: `9`}, 
+   {titulo: `JOHN WICK`, genero: `ACAO`, nota: `8`}, 
+   {titulo: `VELOZES E FURIOSOS`, genero: `AÇAO`, nota: `8.5`}, 
+   {titulo: `MAZE RUNNER`, genero: `FICCAO CIENTIFICA`, nota: `10`}, 
+   {titulo: `HARRY POTTER`, genero: `FICCAO CIENTIFICA`, nota: `8`}
+]
+
+const questionFind = ask.question(`Qual filme voce deseja: `)
+const findFilm = filmList.find(film => film.titulo === questionFind.toUpperCase())
+filmList.map(film => film.titulo)
+console.log(findFilm)
+
+const questionFilter = ask.question(`Qual genero voce deseja: `)
+const filterFilm = filmList.filter(film => film.genero === questionFilter.toUpperCase())
+filmList.map(film => film.genero)
+console.log(filterFilm)
+
+
+const questionNote = ask.question(`Qual nota minima voce deseja: `)
+const noteFilm = filmList.filter(film => Number(film.nota) >= questionNote)
+filmList.map(film => film.nota)
+console.log(noteFilm)
