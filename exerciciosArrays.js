@@ -120,7 +120,7 @@ console.log(array7.join(' - '))
 // =========================================
 /*
 let array8 = [`R$19,00`, `R$29,90`, `R$39,99`]
-console.log(array8[0], array8[2])
+console.log(array8[0], array8[array8.length - 1])
 */
 
 // =========================================
