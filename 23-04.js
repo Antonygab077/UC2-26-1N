@@ -50,11 +50,11 @@ let result = exercicio3(2, 1)
 console.log(result)
 */
 
-let arrayNumbers = [4,8,12,16]
-function exercicio4(array){
-    let array1 = []
-    array1.push(array[array1.length - 1]) / 2
-    array1.push(array[array1[0]]) / 2
-    return array1
+function exercicio4(){
+    let arrayNumbers = [4, 8, 12, 16]
+    let first = arrayNumbers[0] / 2
+    let second = arrayNumbers[arrayNumbers.length - 1] / 2
+    return [first, second]
 }
-console.log(array1[arrayNumbers])
+
+console.log(exercicio4())
