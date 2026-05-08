@@ -24,8 +24,8 @@ console.clear()
 let questionOperacao = ask.question(`0 - Soma 
 1 - Subtracao 
 2 - Multiplicacao  
-3 - Divisao / 
-4 - Resto da divisao.
+3 - Divisao
+4 - Resto da divisao
 Escolha sua operacao: `)
 let questionFirstNumber = Number(ask.question(`Digite seu primeiro numero: `))
 let questionSecondNumber = Number(ask.question(`Digite seu segundo numero: `))
