@@ -1,9 +1,8 @@
 const prompt = require(`readline-sync`)
 
-function createCharacter(name, age, yourClass) {
+function createCharacter(name, yourClass) {
     let character = {
         name: name,
-        age: age,
         class: yourClass
     }
 
@@ -12,9 +11,9 @@ function createCharacter(name, age, yourClass) {
 
 function generateEnemy(enemies) {
     while (enemies.length > 0) {
-        let enemiesRandom = Math.floor(Math.random() * enemies.length)
-        let enemyDelete = enemies.splice(enemiesRandom, 1)[0]
-        console.log(enemyDelete)
+        let enemiesRandom = Math.floor(Math.random() * enemies.length) //Picking a random enemy
+        let enemyDelete = enemies.splice(enemiesRandom, 1)[0] //Removing this enemy from the array
+        return enemyDelete
     }
 }
 
@@ -113,4 +112,73 @@ let enemies = [
     }
 ]
 
-generateEnemy(enemies)
+//Variables
+let character = ``
+let enemy = generateEnemy(enemies)
+let option //Empty variable for while menu
+
+//Menu for creating a character.
+while (option !== 1 && option !== 0) {
+    console.clear()
+    console.log(`
+                    ===========================
+                        WELCOME TO THE RPG!
+                    ===========================
+
+                    1 - Create a character
+                    0 - Exit
+        `)
+
+    option = Number(prompt.question(`Choose an option: `))
+
+    //Switch to choose the character's class
+    switch (option) {
+        case 1:
+            console.clear()
+            let chooseYourName = prompt.question(`What is your name? Tell me: `)
+            console.clear()
+            console.log(`
+
+                    |     WARRIOR     |     RANGER      |     WIZARD      |
+                    |                 |                 |                 |
+                    |  Health: 140    |  Health: 120    |  Health: 110    |
+                    |  Defense: 12    |  Defense: 10    |  Defense: 8     |
+                    |  Attack: 15/30  |  Attack: 15/35  |  Attack: 15/45  |
+                    |  Potions: 3     |  Potions: 3     |  Potions: 3     |
+                    `)
+            let chooseYourClass = Number(prompt.question(`
+
+                    1 - Warrior
+                    2 - Ranger
+                    3 - Wizard
+
+                    Choose your class: `))
+
+            switch (chooseYourClass) {
+                case 1:
+                    character = createCharacter(chooseYourName, warrior)
+                    console.log(character)
+                    break
+                case 2:
+                    character = createCharacter(chooseYourName, ranger)
+                    console.log(character)
+                    break
+                case 3:
+                    character = createCharacter(chooseYourName, wizard)
+                    console.log(character)
+                    break
+                default:
+                    console.log(`Invalid Option`)
+            }
+            break
+
+        case 0:
+            console.clear()
+            process.exit()
+
+        default:
+            console.clear()
+            console.log(`Invalid option!`)
+            prompt.question(`Press ENTER to continue...`)
+    }
+}
