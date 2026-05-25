@@ -18,7 +18,9 @@ function generateEnemy(enemies) {
 }
 
 function attack(character, enemy) {
-
+    let damage = character.class.attack() //Calling the attack function
+    enemy.health - damage //Taking the enemy's life and reducing the damage dealt
+    return damage
 }
 
 function defend(character) {
@@ -143,7 +145,7 @@ while (option !== 1 && option !== 0) {
                     |                 |                 |                 |
                     |  Health: 140    |  Health: 120    |  Health: 110    |
                     |  Defense: 12    |  Defense: 10    |  Defense: 8     |
-                    |  Attack: 15/30  |  Attack: 15/35  |  Attack: 15/45  |
+                    |  Attack: 15/30  |  Attack: 20/35  |  Attack: 30/45  |
                     |  Potions: 3     |  Potions: 3     |  Potions: 3     |
                     `)
             let chooseYourClass = Number(prompt.question(`
@@ -182,3 +184,5 @@ while (option !== 1 && option !== 0) {
             prompt.question(`Press ENTER to continue...`)
     }
 }
+
+console.log(attack(character, enemy))
