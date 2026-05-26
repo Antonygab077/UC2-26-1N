@@ -3,7 +3,8 @@ const prompt = require(`readline-sync`)
 function createCharacter(name, yourClass) {
     let character = {
         name: name,
-        class: yourClass
+        class: yourClass,
+        defending: false
     }
 
     return character
@@ -24,7 +25,19 @@ function attack(character, enemy) {
 }
 
 function defend(character) {
+    character.defending = true
+}
 
+//Additional function not mandatory
+function receiveDamage(character, damage) {
+    if (character.defending) {
+        damage = Math.round(damage / 2) //It was supposed to split the damage in 2
+        character.defending = false //Cancel the defense after 1 attack.
+    }
+
+    character.health - damage
+
+    return damage
 }
 
 function usePotion(character) {
@@ -85,38 +98,44 @@ let enemies = [
     {
         name: `Gorak`,
         health: 65,
-        minDamage: 15,
-        maxDamage: 23
+        attack: function () {
+            return Math.floor(Math.random() * 8) + 15
+        }
     },
     {
         name: `Morthis`,
         health: 75,
-        minDamage: 10,
-        maxDamage: 18
+        attack: function () {
+            return Math.floor(Math.random() * 8) + 10
+        }
     },
     {
         name: `Zargul`,
         health: 50,
-        minDamage: 20,
-        maxDamage: 28
+        attack: function () {
+            return Math.floor(Math.random() * 8) + 20
+        }
     },
     {
         name: `Velkan`,
         health: 100,
-        minDamage: 10,
-        maxDamage: 15
+        attack: function () {
+            return Math.floor(Math.random() * 5) + 10
+        }
     },
     {
         name: `Nyrax`,
         health: 45,
-        minDamage: 25,
-        maxDamage: 33
+        attack: function () {
+            return Math.floor(Math.random() * 8) + 25
+        }
     }
 ]
 
 //Variables
 let character = ``
 let enemy = generateEnemy(enemies)
+let damageEnemy = enemy.attack()
 let option //Empty variable for while menu
 
 //Menu for creating a character.
@@ -186,3 +205,5 @@ while (option !== 1 && option !== 0) {
 }
 
 console.log(attack(character, enemy))
+defend(character)
+console.log(receiveDamage(character, damageEnemy))
